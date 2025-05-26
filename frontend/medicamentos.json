@@ -1,0 +1,17 @@
+{
+    "paracetamol": {
+        "nombre": "Paracetamol",
+        "dosis_min": 10,
+        "dosis_max": 15
+    },
+    "ibuprofeno": {
+        "nombre": "Ibuprofeno",
+        "dosis_min": 5,
+        "dosis_max": 10
+    },
+    "amoxicilina": {
+        "nombre": "Amoxicilina",
+        "dosis_min": 20,
+        "dosis_max": 30
+    }
+}

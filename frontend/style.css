@@ -1,42 +1,158 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fondo con animación de gradiente */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    background: linear-gradient(270deg, #0f2027, #203a43, #2c5364, #0f2027);
+    background-size: 800% 800%;
+    animation: gradientAnimation 20s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e0e0e0;
+    overflow: hidden;
 }
 
-form {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    margin: auto;
+/* Animación para fondo degradado */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
-label {
-    display: block;
-    margin: 10px 0;
-}
-
-input {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-}
-
-button {
-    margin-top: 10px;
-    padding: 10px;
-    width: 100%;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-}
-
-#resultado {
+/* Contenedor principal */
+main {
+    background: rgba(10, 20, 30, 0.85);
+    padding: 3rem 3.5rem;
+    border-radius: 20px;
+    box-shadow:
+        0 0 15px 4px #00fffacc,
+        0 0 40px 15px #00ffaa88;
+    max-width: 420px;
+    width: 90vw;
     text-align: center;
-    margin-top: 20px;
-    font-weight: bold;
-    color: green;
+    backdrop-filter: blur(8px);
+    border: 2px solid #00ffaa;
+}
+
+/* Título con estilo futurista */
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 800;
+    font-size: 3rem;
+    color: #00ffaa;
+    text-shadow:
+        0 0 8px #00ffaa,
+        0 0 15px #00ffaaaa;
+    margin-bottom: 2rem;
+}
+
+/* Formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Etiquetas */
+label {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #00ffcc;
+    text-align: left;
+    text-shadow: 0 0 6px #00ffcc99;
+    letter-spacing: 0.8px;
+}
+
+/* Inputs con estilo moderno */
+input[type="text"],
+input[type="number"] {
+    background: rgba(5, 30, 40, 0.7);
+    border: none;
+    border-radius: 12px;
+    padding: 0.85rem 1.2rem;
+    font-size: 1.1rem;
+    color: #c0fff9;
+    box-shadow:
+        inset 0 0 8px #00ffaa99;
+    transition: all 0.3s ease;
+}
+
+input::placeholder {
+    color: #66f9dbaa;
+    font-style: italic;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    outline: none;
+    background: rgba(5, 50, 70, 0.85);
+    box-shadow:
+        0 0 12px 3px #00ffaaee,
+        inset 0 0 10px #00ffaaee;
+    color: #e0fff9;
+}
+
+/* Botón principal */
+button {
+    margin-top: 1rem;
+    background: linear-gradient(45deg, #00ffaa, #00ccff);
+    border: none;
+    border-radius: 40px;
+    color: #041f2d;
+    font-weight: 900;
+    font-size: 1.3rem;
+    padding: 0.9rem 0;
+    cursor: pointer;
+    box-shadow:
+        0 0 10px #00ffaa,
+        0 0 25px #00ccff;
+    transition: all 0.35s ease;
+    letter-spacing: 1.4px;
+    font-family: 'Orbitron', sans-serif;
+    user-select: none;
+}
+
+button:hover,
+button:focus {
+    background: linear-gradient(45deg, #00ccff, #00ffaa);
+    box-shadow:
+        0 0 20px #00ccff,
+        0 0 40px #00ffaa,
+        0 0 60px #00ccffaa;
+    outline: none;
+    transform: scale(1.05);
+}
+
+/* Resultado */
+#resultadoContainer {
+    margin-top: 2.5rem;
+    background: rgba(5, 20, 30, 0.75);
+    padding: 1.75rem 2rem;
+    border-radius: 20px;
+    box-shadow:
+        0 0 20px 3px #00ffaa99,
+        0 0 40px 15px #00ccff88;
+    font-family: 'Courier New', Courier, monospace;
+    color: #00ffaa;
+    min-height: 110px;
+    text-align: left;
+    white-space: pre-wrap;
+    user-select: text;
+    font-size: 1.15rem;
+    letter-spacing: 0.04em;
 }

@@ -2,27 +2,38 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Dosis Óptima</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora Dosis Óptima</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto&display=swap" rel="stylesheet" />
 </head>
 
 <body>
-    <h1>Calculadora de Dosis Óptima</h1>
-    <form id="formulario">
-        <label>Edad:
-            <input type="number" id="edad" required>
-        </label><br>
-        <label>Peso (kg):
-            <input type="number" id="peso" required>
-        </label><br>
-        <label>Medicamento:
-            <input type="text" id="medicamento" required>
-        </label><br>
-        <button type="submit">Calcular</button>
-    </form>
+    <main>
+        <h1>Calculadora de Dosis Óptima</h1>
 
-    <div id="resultado"></div>
+        <form id="formulario" autocomplete="off">
+            <label for="medicamento">Medicamento:</label>
+            <input type="text" id="medicamento" name="medicamento" required placeholder="Ejemplo: paracetamol" />
+
+            <label for="peso">Peso (kg):</label>
+            <input type="number" id="peso" name="peso" required min="0" step="0.1"
+                placeholder="Ingrese el peso en kg" />
+
+            <label for="edad">Edad (años):</label>
+            <input type="number" id="edad" name="edad" required min="0" step="1"
+                placeholder="Ingrese la edad en años" />
+
+            <button type="submit">Calcular dosis</button>
+        </form>
+
+        <section id="resultadoContainer">
+            <h2>Resultado:</h2>
+            <pre id="resultado"></pre>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>
